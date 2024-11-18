@@ -178,7 +178,12 @@ int main () {
 	inventory.push_back(itemPtr);
 	cout << "Item added to your inventory." << endl;
 	cout << "Your inventory: " << endl;
-	printInventory(inventory);
+	if (inventory.size() > 0) {
+	  printInventory(inventory);
+	}
+	else {
+	  cout << "NONE" << endl;
+	}
       }
     }
     else if (cmd == 2) { // drop an item
@@ -199,7 +204,12 @@ int main () {
       if (dropped) {
 	current->setItem(itemPtr);
 	cout << "Item dropped.\nYour inventory:" << endl;
-	printInventory(inventory);
+	if (inventory.size() > 0) {
+	  printInventory(inventory);
+	}
+	else {
+	  cout << "NONE" << endl;
+	}
       }
       // item not found
       else {
