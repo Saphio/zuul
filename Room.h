@@ -8,19 +8,25 @@
 
 using namespace std;
 
-class Room {
+// room header file
+class Room{
  public:
+  // constructors
   Room();
   Room(char*);
-  char* getDescription();
+  // methods
+  void getDescription();
   void setExit(int, Room*);
   void showExits();
+  bool hasExit (int);
   Room* getExit(int);
   void setItem(char*);
   void showItems();
-  void getItem(char*);
+  bool getItem(char*);
+  int amtItems();
 
  private:
+  // private variables
   char* description;
   map<int, Room*> exits;
   vector<char*> items;
